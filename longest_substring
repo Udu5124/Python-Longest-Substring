@@ -1,0 +1,18 @@
+def longest_substring(s):
+    res = -1
+    d = {}
+    for i, c in enumerate(s):
+
+        if c in d:
+            res = max(res, i - d[c] - 1)
+
+        else:
+            d[c] = i
+
+    return res
+
+
+
+s = input("Enter the string : ")
+result = longest_substring(s)
+print(f'The longest substring is {result}')
